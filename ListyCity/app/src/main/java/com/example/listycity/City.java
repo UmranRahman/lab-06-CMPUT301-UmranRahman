@@ -1,5 +1,7 @@
 package com.example.listycity;
 
+import java.util.Objects;
+
 /**
  *This is a class that defines a City
  * */
@@ -22,5 +24,11 @@ public class City implements Comparable{
     public int compareTo(Object o) {
         City city = (City) o; //typecasting
         return this.city.compareTo(city.getCityName()); // this.city refers to the city name
+    }
+
+    @Override
+    public boolean equals(Object o){
+        City city = (City) o;
+        return this.city.equals(city.getCityName());
     }
 }
